@@ -1,9 +1,10 @@
 export default function App() {
+  let counter = 100;
+  let username = "mahima";
   return (
     <div>
-      <h1>hello worldsss</h1>
-      <div>lloreeemmmmmmm</div>
-      <div>good morning</div>
+      <div>{counter}</div>
+      <div>{username}</div>
     </div>
   );
 }
