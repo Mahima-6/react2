@@ -1,4 +1,3 @@
-export default function App()
-{
-  return "good morning";
-}
+const App=()=>"good afternoon";
+
+export default App;
