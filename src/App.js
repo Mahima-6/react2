@@ -124,16 +124,28 @@ export default function App() {
 }
 
 function MyComponent() {
-  let [msg, setmsg] = useState("");
-  let getmsg = (e) => {
-    setmsg(e.target.value);
+  let [list, setlist] = useState(["hello"]);
+  let Add = () => {
+    const newList = [...list, "good afternoon"];
+    setlist(newList);
   };
+
+  let Del = () => {
+    list.splice(0, 1);
+    const newList = [...list];
+    setlist(newList);
+  };
+
   return (
     <div>
-      <div>Msg Application</div>
-      <input type="text" value={msg} onChange={getmsg} />
-      <div>{msg}</div>
-      <div>{msg}</div>
+      <div>Input Application</div>
+      <input type="button" value="Add" onClick={Add} />
+      <input type="button" value="Del" onClick={Del} />
+      <div>
+        {list.map((item) => (
+          <div>{item}</div>
+        ))}
+      </div>
     </div>
   );
 }
